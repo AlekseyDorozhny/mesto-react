@@ -3,7 +3,7 @@ import Main from "./Main";
 import Footer from "./Footer";
 import PopupWithForm from "./PopupWithForm";
 import React from "react";
-import PopupWithImage from './PopupWithImage'
+import ImagePopup from './ImagePopup'
 
 
 function App() {
@@ -74,7 +74,7 @@ function App() {
       buttonText = {'Да'}
       onClose = {closeAllPopups}>
       </PopupWithForm>
-      <PopupWithImage
+      <ImagePopup
       card = {selectedCard}
       onClose = {closeAllPopups}
       />

@@ -1,4 +1,4 @@
-function PopupWithImage({card, onClose}) {
+function ImagePopup({card, onClose}) {
 
   return (
     <div className={(card != "") ? `popup_opened popup popup_type_image` : ` popup popup_type_image`}>
@@ -12,7 +12,7 @@ function PopupWithImage({card, onClose}) {
 }
 
 
-export default PopupWithImage;
+export default ImagePopup;
 
 
 
