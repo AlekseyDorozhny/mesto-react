@@ -27,13 +27,21 @@ React.useEffect(() => {
   return (
     <main>
       <section className="profile">
-        <div className="profile__avatar" onClick={() => {onEditAvatar(true)}} style={{ backgroundImage: `url(${userAvatar})` }} ></div>
+        <div className="profile__avatar"
+        onClick={() => {onEditAvatar(true)}}
+        style={{ backgroundImage: `url(${userAvatar})` }} ></div>
         <div className="profile__info">
           <h1 className="profile__name">{userName}</h1>
           <p className="profile__activity">{userDescription}</p>
-          <button className="profile__edit-button" type="button" aria-label="редактирование профиля" onClick={() => {onEditProfile(true)}}></button>
+          <button className="profile__edit-button"
+          type="button"
+          aria-label="редактирование профиля"
+          onClick={() => {onEditProfile(true)}}></button>
         </div>
-        <button className="profile__add-button" type="button" aria-label="добавить картинку" onClick={() => {onAddPlace(true)}}></button>
+        <button className="profile__add-button"
+        type="button"
+        aria-label="добавить картинку"
+        onClick={() => {onAddPlace(true)}}></button>
       </section>
       <section className="elements">
         {cards.map((card, i) => {
@@ -43,7 +51,7 @@ React.useEffect(() => {
           name = {card.name}
           link = {card.link}
           owner = {card.owner}
-          key = {i}
+          key = {card._id}
           onCardClick = {onCardClick}
           />)
         })}

@@ -37,11 +37,25 @@ function App() {
       onClose = {closeAllPopups}
       >
         <label className="popup__field">
-          <input type="text" className="popup__input popup__input_type_name"  id="name-input" placeholder="Имя" name="profileNameForm" minLength="2" maxLength="40" required/>
+          <input type="text"
+          className="popup__input popup__input_type_name"
+          id="name-input"
+          placeholder="Имя"
+          name="profileNameForm"
+          minLength="2"
+          maxLength="40"
+          required/>
           <span className="popup__error name-input-error"> </span>
         </label>
         <label className="popup__field">
-          <input type="text" className="popup__input popup__input_type_activity" id="activity-input" placeholder="О себе" name="profileActivityForm" minLength="2" maxLength="200" required/>
+          <input type="text"
+          className="popup__input popup__input_type_activity"
+          id="activity-input"
+          placeholder="О себе"
+          name="profileActivityForm"
+          minLength="2"
+          maxLength="200"
+          required/>
           <span className="popup__error activity-input-error"> </span>
         </label>
       </PopupWithForm>
@@ -51,11 +65,23 @@ function App() {
       isOpened = {isAddPlacePopupOpen}
       onClose = {closeAllPopups}>
         <label className="popup__field">
-          <input type="text" className="popup__input popup__input_type_card-name" id="cardName-input" placeholder="Название" name="cardNameForm" minLength="2" maxLength="30" required/>
+          <input type="text"
+          className="popup__input popup__input_type_card-name"
+          id="cardName-input"
+          placeholder="Название"
+          name="cardNameForm"
+          minLength="2"
+          maxLength="30"
+          required/>
           <span className="popup__error cardName-input-error"></span>
         </label>
         <label className="popup__field">
-          <input type="url" className="popup__input popup__input_type_card-Src" id="cardSource-input" placeholder="Ссылка на картинку" name="cardSrcForm" required/>
+          <input type="url"
+          className="popup__input popup__input_type_card-Src"
+          id="cardSource-input"
+          placeholder="Ссылка на картинку"
+          name="cardSrcForm"
+          required/>
           <span className="popup__error cardSource-input-error"></span>
         </label>
       </PopupWithForm>
@@ -65,7 +91,12 @@ function App() {
       isOpened = {isEditAvatarPopupOpen}
       onClose = {closeAllPopups}>
         <label className="popup__field">
-          <input type="url" className="popup__input popup__input_type_avatar-src" id="avatarSrc-input" placeholder="Ссылка на аватар" name="avatarSrcForm" required/>
+          <input type="url"
+          className="popup__input popup__input_type_avatar-src"
+          id="avatarSrc-input"
+          placeholder="Ссылка на аватар"
+          name="avatarSrcForm"
+          required/>
           <span className="popup__error avatarSrc-input-error"></span>
         </label>
       </PopupWithForm>
