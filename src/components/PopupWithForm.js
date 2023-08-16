@@ -1,4 +1,4 @@
-function PopupWithForm({name, title, buttonText, children, isOpened, onClose}) {
+function PopupWithForm({name, title, buttonText, children, isOpened, onClose, onSubmit}) {
   return (
       <div className={isOpened ? `popup_opened popup popup_type_${name}` : ` popup popup_type_${name}`}>
         <div className="popup__container">
@@ -8,11 +8,12 @@ function PopupWithForm({name, title, buttonText, children, isOpened, onClose}) {
           aria-label={`закрыть редактирование ${name}`}></button>
           <form className={`popup__form popup__form_type_${name}`}
           name={`${name}Form`}
-          method="post">
-          <h2 className="popup__heading">{`${title}`}</h2>
-          {children}
-          <button type="submit"
+          onSubmit={onSubmit}>
+            <h2 className="popup__heading">{`${title}`}</h2>
+            {children}
+            <button type="submit"
           className={`popup__save-button popup__save-button_area_${name}`}
+          // eslint-disable-next-line no-template-curly-in-string
           aria-label="сохранить ${props.name}">{`${buttonText}`}</button>
           </form>
         </div>

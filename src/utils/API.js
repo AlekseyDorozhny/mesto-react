@@ -38,6 +38,7 @@ class Api {
   };
 
   sendUserAvatar(url) {
+    console.log(url)
     return fetch(`${this.baseUrl}/users/me/avatar`, {
       method: 'PATCH',
       headers: this.headers,
@@ -48,17 +49,10 @@ class Api {
     .then((res) => this._checkResponse(res))
   };
 
-  putLikeHendler(ID) {
+  likeHendler(ID, status) {
+    const method = (status)? 'PUT' : 'DELETE';
     return fetch(`${this.baseUrl}/cards/${ID}/likes `, {
-      method: 'PUT',
-      headers: this.headers,
-    })
-    .then((res) => this._checkResponse(res))
-  }
-
-  deleteLikeHendler(ID) {
-    return fetch(`${this.baseUrl}/cards/${ID}/likes `, {
-      method: 'DELETE',
+      method: `${method}`,
       headers: this.headers,
     })
     .then((res) => this._checkResponse(res))
