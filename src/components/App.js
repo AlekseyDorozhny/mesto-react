@@ -50,7 +50,8 @@ function App() {
     const isLiked = likes.some(i => i._id === currentUser._id);
     api.likeHendler(_id, !isLiked).then((newCard) => {
       getCardsData((state) => state.map((c) => c._id === _id ? newCard : c));
-    });
+    })
+    .catch((err) => {console.log(err)})
   }
 
   function handleCardDelete(id) {

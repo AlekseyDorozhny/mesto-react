@@ -13,7 +13,7 @@ function EditProfilePopup({isOpened, onClose, onUpdateUser}) {
       setName(currentUser.name);
       setDescription(currentUser.about);
     }
-  }, [currentUser]);
+  }, [currentUser, isOpened]);
 
 
   function handleNameChange(e) {
@@ -36,7 +36,7 @@ function EditProfilePopup({isOpened, onClose, onUpdateUser}) {
     isOpened = {isOpened}
     onClose = {onClose}
     onSubmit ={handleSubmit}>
-      <label className="popup__field" value={name} onChange={handleNameChange}>
+      <label className="popup__field" >
         <input type="text"
         className="popup__input popup__input_type_name"
         id="name-input"
@@ -45,10 +45,11 @@ function EditProfilePopup({isOpened, onClose, onUpdateUser}) {
         minLength="2"
         maxLength="40"
         required
-        defaultValue={name}/>
+        value={name}
+        onChange={handleNameChange}/>
         <span className="popup__error name-input-error"> </span>
       </label>
-      <label className="popup__field" value={description} onChange={handleDescriptionChange}>
+      <label className="popup__field">
         <input type="text"
         className="popup__input popup__input_type_activity"
         id="activity-input"
@@ -57,7 +58,8 @@ function EditProfilePopup({isOpened, onClose, onUpdateUser}) {
         minLength="2"
         maxLength="200"
         required
-        defaultValue={description}/>
+        value={description}
+        onChange={handleDescriptionChange}/>
         <span className="popup__error activity-input-error"> </span>
       </label>
     </PopupWithForm>
