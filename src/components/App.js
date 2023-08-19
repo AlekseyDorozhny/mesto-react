@@ -63,7 +63,8 @@ function App() {
     }).map(e => {return e})
     api.deleteCard(id).then(() => {
       getCardsData(cardsDataClone)
-    });
+    })
+    .catch((err) => {console.log(err)})
   }
 
   function handleUpdateUser({name, about}) {
@@ -71,6 +72,7 @@ function App() {
       getUserInfo(res);
       closeAllPopups();
     })
+    .catch((err) => {console.log(err)})
   }
 
   function handleUpdateAvatar(url) {
@@ -78,15 +80,15 @@ function App() {
       getUserInfo(res);
       closeAllPopups();
     })
+    .catch((err) => {console.log(err)})
   }
 
   function handleAddCard({link, name}) {
-    console.log(link, name)
     api.sendCard(link, name).then((newCard) => {
       getCardsData([newCard, ...cards])
-
       closeAllPopups();
     })
+    .catch((err) => {console.log(err)})
   }
 
   return (
